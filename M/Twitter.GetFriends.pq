@@ -5,7 +5,7 @@ let
             max_tweets = 5000, // endpoint allows for up to 5000 items to be returned per request
             count = if number is null then max_tweets else number,
             max_requests = 15, // Twitter-provided max for app authorized calls
-            number_requests = if count > max_tweets * max_requests then max_requests else Number.RoundUp(count / max_tweets), // 75,000 is the maximum number of items that can be returned in a 15-minute period
+            number_requests = if count > max_tweets * max_requests then max_requests else Number.RoundUp(count / max_requests), // 75,000 is the maximum number of items that can be returned in a 15-minute period
             baseUri = "https://api.twitter.com",
             relativeUri = "1.1/friends/ids.json",
             fullUri = Uri.Combine(baseUri,relativeUri),
